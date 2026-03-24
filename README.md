@@ -1,18 +1,73 @@
-# ai-study-buddy
-Study Buddy is a tool that helps students revise by managing, organising and structuring their time when preparing for university assignments, quizzes and exams with the help of AI. The application has a particular focus on supporting neurodiverse students by providing clear visual structure, manageable study sessions, and accessible design.
+# Study Buddy
 
-## The problem
-When there is there is a large amount of content to revise for a test, exam or whatevever the occassion many students may feel left wondering where to start or how to approach such task. Particularly neurodiverse in students.
+Study Buddy helps students revise by managing and structuring their time when 
+preparing for assignments, quizzes and exams with the help of AI, with a 
+particular focus on supporting neurodiverse students.
+
+## The Problem
+
+When there is a large amount of content to revise, many students feel left 
+wondering where to start. This is particularly common in neurodiverse students.
 
 ## Solution
-Study buddy allows users to enter a description of what they want or need to study, where this input is then sent to the AI API Gemini. Here the user request is analysed and a structured study plan is generated, difficulty of topics is estimated and suggests how the task can be 
-decomposed into more manageable chunks for the student to begin revision.
 
-The interface also aims to support neurodivergent students, including those with ADHD and dyslexia, through clear visual structure and the use of the Atkinson Hyperlegible font to improve readability and reduce cognitive overload.
+Study Buddy lets users describe what they need to study, which is sent to the 
+Gemini API. A structured study plan is generated, topic difficulty is estimated 
+and content is broken into manageable chunks for revision. This gives students 
+a clear starting point rather than feeling overwhelmed, which is particularly 
+useful when juggling multiple deadlines.
 
-This is done by:
+- Topic cards showing the main areas to revise
+- Difficulty bars colour coded 1-10
+- Metrics showing total study time and a workload score
+- A pomodoro timer to help maintain concentration and focus
 
-- Having topic cards that show main areas for the student to revise
-- Difficulty bars which show how challenging each topic may be, colour coded 1-10
-- Summary of the metrics, total time that it will take to study and the workload score for the user to better gauge the task
-- A pomodoro timer included to help users get started and maintain concentration and focus (typically proven to help neurodiverse students)
+## How it uses AI
+
+Student input is sent to Google's Gemini AI, which returns a structured study 
+plan. The app then visualises this as topic cards, difficulty bars and a 
+pomodoro session schedule.
+
+The interface supports neurodivergent students including those with ADHD and 
+dyslexia through clear visual structure and the Atkinson Hyperlegible font.
+
+## Built with
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Google Gemini API
+
+## How to use Study Buddy
+
+1. Clone the repository
+```bash
+git clone https://github.com/khans38/ai-study-buddy.git
+cd ai-study-buddy
+```
+2. Install dependencies
+```bash
+npm install
+```
+3. Set up your environment variables
+```bash
+cp .env.example .env
+```
+Add your Gemini API key to `.env` — get a free key at https://aistudio.google.com
+```
+GEMINI_API_KEY=your_api_key_here
+```
+4. Run the development server
+```bash
+npm run dev
+```
+5. Open http://localhost:3000
+
+## Example Demo
+
+**Input:**
+> I need to revise for my maths exam which is on Friday, linear algebra and 
+> binomial distribution. I have a stats exam next week on Tuesday which is on 
+> normal distribution and hypothesis testing too.
+
+![Study Buddy demo](public/demo.gif)

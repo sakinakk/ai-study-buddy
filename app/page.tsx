@@ -6,6 +6,7 @@ import MetricCards from "@/components/MetricCards";
 import TopicList from "@/components/TopicList";
 import { StudyInput, StudyPlan, ProcessedStudyPlan } from "@/types/studyPlan";
 import { processPlan } from "@/lib/processPlan";
+import PomodoroTimer from "@/components/PomodoroTimer";
 
 export default function Home() {
   const [studyPlan, setStudyPlan] = useState<ProcessedStudyPlan | null>(null);  // processed plan from api
@@ -71,6 +72,7 @@ export default function Home() {
 
         {studyPlan && (
           <div className="flex flex-col gap-3 fade-in">
+            <PomodoroTimer sessions={studyPlan.pomodoro_plan} onSessionChange={() => {}}/>
             <MetricCards studyPlan={studyPlan} />
             <TopicList
               topics={studyPlan.scheduled_topics}
