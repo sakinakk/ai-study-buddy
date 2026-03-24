@@ -1,0 +1,47 @@
+export type TaskType = "revision" | "essay" | "problem-solving" | "reading" | "learning" | "dissertation";
+export type PriorityLevel = "High" | "Intermediate" | "Low";
+export type SessionType = "focus" | "break"; // focus sessions that are 25 mins
+
+export interface Subtopic {
+  name: string;
+  estimated_minutes: number;
+}
+
+export interface Topic {                    // main topic that a student needs to study
+  name: string;
+  type: TaskType;
+  priority: PriorityLevel;
+  difficulty: number;                       // 1 through 10
+  estimated_minutes: number;
+  subtopics: Subtopic[];
+}
+
+export interface PomodoroSession {          // for each indvidual pomodoro session
+  session: number;
+  topic: string;
+  subtopic: string;
+  duration_minutes: number;
+  type: SessionType;
+}
+
+export interface StudyPlan {                // AI returned plan with metrics
+  overall_workload_score: number;
+  total_estimated_hours: number;
+  topics: Topic[];
+  pomodoro_plan: PomodoroSession[];
+}
+
+export interface StudyInput {
+  notes: string;
+  exam_date?: string;
+}
+
+// testing extend the plan and check feasability
+
+
+export interface ProcessedStudyPlan extends StudyPlan {
+  scheduled_topics: Topic[];
+  deferred_topics: Topic[];
+  is_constrained: boolean;
+  constraint_message: string;
+}
