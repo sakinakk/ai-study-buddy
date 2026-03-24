@@ -141,3 +141,5 @@ vite.config.ts.timestamp-*
 # hide API key
 
 .env*
+
+.vs

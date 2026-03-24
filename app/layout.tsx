@@ -4,6 +4,9 @@ import "./styles.css";
 export const metadata: Metadata = {
   title: "Study Buddy",
   description: "Organise your time and tasks!",
+  icons: {
+    icon: "/university-svgrepo-com.svg",
+  },
 };
 
 export default function RootLayout({

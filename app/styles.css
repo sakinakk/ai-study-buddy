@@ -11,3 +11,63 @@ body {
   color: var(--foreground);
   font-family: "Atkinson Hyperlegible", Verdana, sans-serif;
 }
+
+/* loading spinner, credit to github.com/vineethtrv/css-loader */
+.loader {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.9);
+  animation: prixClipFix 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes prixClipFix {
+  0%   { clip-path: polygon(50% 50%,0 0,0 0,0 0,0 0,0 0) }
+  25%  { clip-path: polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0) }
+  50%  { clip-path: polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%) }
+  75%  { clip-path: polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%) }
+  100% { clip-path: polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0) }
+}
+
+/* animated difficulty bar, from zero to target width*/
+@keyframes growBar {
+  from { width: 0%; }
+  to   { width: var(--bar-width); }
+}
+
+.difficulty-bar {
+  animation: growBar 0.8s ease-out forwards;
+  width: var(--bar-width);
+}
+
+/* lift the metric cards when hovering above them */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeSlideIn 0.4s ease forwards;
+}

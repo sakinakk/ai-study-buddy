@@ -62,10 +62,10 @@ Return a JSON study plan using this exact structure:
 </task>
 
 <rules>
-1. After every 4 focus sessions, add a 15 minute break
-2. Order topics from highest priority to lowest
-3. If two topics share the same priority, put the harder one first
-4. Each topic must have at least 2 subtopics
+1. After every 2 focus sessions, add a 5 minute break
+2. After every 4 focus sessions, add a 15 minute break instead of the 5 minute break
+3. Order topics from highest priority to lowest
+4. If two topics share the same priority, put the harder one first
 5. Each pomodoro session covers exactly one subtopic
 6. If an exam date is provided, increase priority and workload score the closer it is
 7. Never plan more content than is realistic given the total estimated hours
