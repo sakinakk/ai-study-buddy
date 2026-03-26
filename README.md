@@ -71,3 +71,7 @@ npm run dev
 > normal distribution and hypothesis testing too.
 
 ![Study Buddy demo](public/demo.gif)
+
+**Output:**
+> A structured study plan with topic cards, difficulty bars, workload metrics 
+> and a pomodoro session schedule generated from your input.
